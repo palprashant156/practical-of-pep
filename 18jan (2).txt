@@ -1,0 +1,231 @@
+Name - Prashant Pal
+Student ID - 962401749
+Date - 18 Jan 2023
+
+
+
+
+1-Write a program to print the area and perimeter of a triangle having sides of 3, 4 and 5 units by creating a class named 'Triangle' with the constructor having the three sides as its parameters.
+
+2-Write a program to print the area of two rectangles having sides (4,5) and (5,8) respectively by creating a class named 'Rectangle' with a function named 'Area' which returns the area. Length and breadth are passed as parameters to its constructor.
+
+3-Write a program to print the area of a rectangle by creating a class named 'Area' taking the values of its length and breadth as parameters of its constructor and having a function named 'returnArea' which returns the area of the rectangle. Length and breadth of the rectangle are entered through keyboard.
+
+4-Print the average of three numbers entered by the user by creating a class named 'Average' having a function to calculate and print the average without creating any object of the Average class.
+
+5-Print the sum, difference and product of two complex numbers by creating a class named 'Complex' with separate functions for each operation whose real and imaginary parts are entered by the user.
+
+Q1-
+                                                   
+ #include <iostream>
+
+using namespace std;
+
+class Triangle
+{
+private:
+    int x, y, z,ar;
+
+public:
+    Triangle(int a, int b, int c)
+    {
+        x = a;
+        y = b;
+        z = c;
+    }
+    int Area()
+    {
+        ar = 0.5*x*y;
+        return ar;
+    }
+    int perimeter()
+    {
+        return x+y+z;
+    }
+};
+
+int main()
+{
+    Triangle obj = Triangle(3,4,5);
+    cout << obj.Area() <<" Units"<< "\n";
+    cout<<obj.perimeter()<<" Units"<<"\n";
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+Q2-
+
+#include <iostream>
+
+using namespace std;
+
+class Rectangle
+{
+
+    int x,y;
+
+public:
+    Rectangle(int a, int b)
+    {
+        x=a;
+        y=b;
+    }
+    int Area()
+    {
+        return x*y;
+    }
+};
+
+int main()
+{
+    Rectangle obj1 = Rectangle(4, 5);
+    Rectangle obj2 = Rectangle(5, 8);
+    cout << obj1.Area() <<" Units"<<"\n";
+    cout << obj2.Area() <<" Units"<< "\n";
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q3-
+
+#include<iostream>
+using namespace std;
+
+class Area
+{
+    int x,y;
+  public:
+   Area(int l , int b)
+   {
+       x=l;
+       y=b;
+   }
+   int returnarea(){
+    return x*y;
+   }
+};
+int main(){
+    int l,b;
+cout<<"Enter length of rectangle"<<endl;
+cin>>l;
+cout<<"Enter breadth of rectangle"<<endl;
+cin>>b;
+Area o(l,b);
+cout<<"Area of rectangle is " << o.returnarea() <<" units";
+
+}
+
+
+
+
+
+
+
+
+
+
+Q4-
+#include <iostream>
+using namespace std;
+class Average{
+public:
+static float calcavg(float a, float b, float c){
+return (a + b + c) / 3;
+    }
+};
+
+int main(){
+    cout<<"Enter three numbers: ";
+    float a, b, c;
+    cin>>a;
+    cin>>b;
+    cin>>c;
+    cout<<"The average is: "<<Average::calcavg(a,b,c)<<endl;
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+Q5-
+#include<iostream>
+using namespace std;
+class Complex{
+public:
+    int real, imag;
+     
+     void setvalue()
+    {
+        cin>>real;
+        cin>>imag;
+    }
+	
+    void display()
+    {
+        cout<<real<<"+"<<imag<<"i"<<endl;
+    }
+	
+ 
+    void sum(Complex c1, Complex c2)
+    {
+        real=c1.real+c2.real;
+        imag=c1.imag+c2.imag;
+    }
+    void sub(Complex c1, Complex c2)
+    {
+        real=c1.real-c2.real;
+        imag=c1.imag-c2.imag;
+    }
+    void multi(Complex c1, Complex c2)
+    {
+        real=(c1.real*c2.real)-(c1.imag*c2.imag);
+        imag=(c1.real*c2.imag)+(c2.real*c1.imag);
+    }
+    };
+int main()
+    {
+        Complex c1,c2,c3,c4,c5;
+        cout<<"Enter real and imaginary part of first complex number"<<endl;
+        c1.setvalue();
+        cout<<"Enter real and imaginary part of second complex number"<<endl;
+        c2.setvalue();
+        cout<<"Sum of two complex numbers is"<<endl;
+        c3.sum(c1,c2);
+        c3.display();
+        cout<<"Subtraction of two complex numbers is"<<endl;
+        c4.sub(c1,c2);
+        c4.display();
+        cout<<"Multiplication of two complex numbers is"<<endl;
+        c5.multi(c1,c2);
+        c5.display();
+    return 0;
+    }
